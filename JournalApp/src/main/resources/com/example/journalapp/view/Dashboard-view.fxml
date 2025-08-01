@@ -15,7 +15,7 @@
             <children>
                 <Label styleClass="header-label" text="My Journal" />
                 <Region HBox.hgrow="ALWAYS" />
-                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#switchToLogin" styleClass="logout-button" text="Logout" />
+                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogin" styleClass="logout-button" text="Logout" />
             </children>
             <padding>
                 <Insets left="20.0" right="20.0" />
@@ -26,8 +26,8 @@
         <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
             <children>
                 <Label styleClass="title-label" text="What's on your mind today?" />
-                <Button fx:id="createEntryButton" mnemonicParsing="false" onAction="#switchToWriteJournal" prefHeight="60.0" prefWidth="250.0" styleClass="primary-button" text="Create New Journal Entry" />
-                <Button fx:id="pastEntriesButton" mnemonicParsing="false" onAction="#switchToPastJournal" prefHeight="60.0" prefWidth="250.0" text="Search Past Entries" />
+                <Button fx:id="createEntryButton" mnemonicParsing="false" onAction="#onWriteEntry" prefHeight="60.0" prefWidth="250.0" styleClass="primary-button" text="Create New Journal Entry" />
+                <Button fx:id="pastEntriesButton" mnemonicParsing="false" onAction="#onPastEntries" prefHeight="60.0" prefWidth="250.0" text="Search Past Entries" />
             </children>
         </VBox>
     </center>

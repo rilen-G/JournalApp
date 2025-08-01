@@ -21,8 +21,8 @@
             <PasswordField fx:id="passwordField" promptText="Enter your password" />
          </children>
       </VBox>
-      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#switchToJournalApp" styleClass="primary-button" text="Log In" />
-      <Hyperlink onAction="#switchToSignUp" text="Don't have an account? Sign Up" />
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLogin" styleClass="primary-button" text="Log In" />
+      <Hyperlink onAction="#onGoSignUp" text="Don't have an account? Sign Up" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

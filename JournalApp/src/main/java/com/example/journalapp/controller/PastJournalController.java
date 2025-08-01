@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import java.io.IOException;
 
-public class PastJournalController {
+public class PastJournalController extends BaseController  {
 
     @FXML
     private void switchToJournalApp(ActionEvent event) throws IOException {
