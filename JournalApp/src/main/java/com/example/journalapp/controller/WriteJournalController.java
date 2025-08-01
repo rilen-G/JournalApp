@@ -9,7 +9,7 @@ public class WriteJournalController {
 
     @FXML
     private void switchToJournalApp(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event, "/com/example/journalapp/fxmls/journal_app.fxml", "Dashboard");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/Dashboard-view.fxml", "Dashboard");
     }
 
 

@@ -10,16 +10,16 @@ public class DashboardController {
 
     @FXML
     private void switchToLogin(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event,"/com/example/journalapp/fxmls/login.fxml","Login");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/Login-view.fxml","Login");
     }
 
     @FXML
     private void switchToWriteJournal(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event,"/com/example/journalapp/fxmls/write_journal.fxml", "New Entry");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/WriteEntry-view.fxml", "New Entry");
     }
 
     @FXML
     private void switchToPastJournal(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event,"/com/example/journalapp/fxmls/past_journal.fxml", "Past Entries");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/PastEntries-view.fxml", "Past Entries");
     }
 }

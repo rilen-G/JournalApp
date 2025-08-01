@@ -9,11 +9,11 @@ public class SignUpController {
 
     @FXML
     private void switchToJournalApp(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event, "/com/example/journalapp/fxmls/journal_app.fxml", "Dashboard");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/Dashboard-view.fxml", "Dashboard");
     }
 
     @FXML
     private void switchToLogin(ActionEvent event) throws IOException {
-        SceneManager.switchScene(event, "/com/example/journalapp/fxmls/login.fxml", "Login");
+        SceneManager.switchScene(event, "/com/example/journalapp/view/Login-view.fxml", "Login");
     }
 }
