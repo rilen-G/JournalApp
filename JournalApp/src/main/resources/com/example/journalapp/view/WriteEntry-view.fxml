@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.WriteJournalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.WriteEntryController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="backButton" mnemonicParsing="false" onAction="#switchToJournalApp" text="← Back" />
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#onCancel" text="← Back" />
                 <Label styleClass="header-label" text="Create a New Entry" />
             </children>
             <padding>
@@ -37,7 +37,7 @@
     <bottom>
         <HBox alignment="CENTER_RIGHT" prefHeight="60.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#switchToJournalApp" styleClass="primary-button" text="Save Entry" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onDashboard" styleClass="primary-button" text="Save Entry" />
             </children>
             <padding>
                 <Insets right="20.0" />

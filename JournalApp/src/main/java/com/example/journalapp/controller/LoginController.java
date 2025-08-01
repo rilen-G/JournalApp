@@ -2,12 +2,9 @@ package com.example.journalapp.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import com.example.journalapp.util.SceneManager;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class LoginController extends BaseController {
 
@@ -16,11 +13,12 @@ public class LoginController extends BaseController {
     @FXML private Button loginButton;
 
     @FXML
-    private void onLogin(ActionEvent event) {
+    public void onLogin(ActionEvent event) {
+        switchScene("Dashboard-view.fxml", (Stage) usernameField.getScene().getWindow(), "Dashboard");
     }
 
     @FXML
-    private void onGoSignUp(ActionEvent event) {
+    public void onGoSignUp(ActionEvent event) {
         switchScene("Signup-view.fxml", (Stage) usernameField.getScene().getWindow(), "Signup");
     }
 }

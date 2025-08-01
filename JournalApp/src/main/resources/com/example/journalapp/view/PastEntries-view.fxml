@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.PastJournalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.PastEntriesController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="backButton" mnemonicParsing="false" onAction="#switchToJournalApp" text="← Back" />
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBack" text="← Back" />
                 <Label styleClass="header-label" text="Past Entries" />
             </children>
             <padding>
