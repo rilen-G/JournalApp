@@ -1,5 +1,6 @@
 package com.example.journalapp.controller;
 
+import com.example.journalapp.model.JournalEntry;
 import com.example.journalapp.model.User;
 import com.example.journalapp.service.JournalService;
 import com.example.journalapp.util.Session;
@@ -19,6 +20,7 @@ public class WriteEntryController extends BaseController {
     @FXML private Button backButton;
 
     private JournalService journalService;
+    private JournalEntry editingEntry;
 
     @FXML
     public void initialize() {
@@ -27,6 +29,13 @@ public class WriteEntryController extends BaseController {
         } catch (SQLException e) {
             showError("Error initializing entry service: " + e.getMessage());
         }
+    }
+
+    public void setEditingEntry(JournalEntry entry) {
+        this.editingEntry = entry;
+        titleField.setText(entry.getTitle());
+        contentArea.setText(entry.getContent());
+        saveButton.setText("Update Entry");
     }
 
     // Called when user clicks "Save Entry"
@@ -50,6 +59,10 @@ public class WriteEntryController extends BaseController {
     // Called when user clicks "← Back"
     @FXML
     public void onCancel(ActionEvent event) {
-        switchScene("Dashboard-view.fxml", (Stage) backButton.getScene().getWindow(), "Dashboard");
+        if (editingEntry != null) {
+            switchScene("PastEntries-view.fxml", (Stage) backButton.getScene().getWindow(), "Past Entries");
+        } else {
+            switchScene("Dashboard-view.fxml", (Stage) backButton.getScene().getWindow(), "Dashboard");
+        }
     }
 }

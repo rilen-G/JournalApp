@@ -13,7 +13,6 @@ public class DatabaseManager {
     private static Connection connection;
 
     private DatabaseManager() {
-        // Private constructor to prevent instantiation
     }
 
     /**

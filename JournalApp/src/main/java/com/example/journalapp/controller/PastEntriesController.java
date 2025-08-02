@@ -7,12 +7,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 
 public class PastEntriesController extends BaseController {
     @FXML private TextField searchField;
@@ -59,14 +64,27 @@ public class PastEntriesController extends BaseController {
         entryContentArea.setText(entry.getContent());
     }
 
-    @FXML
-    public void onBack(ActionEvent event) {
-        switchScene("Dashboard-view.fxml", (Stage) backButton.getScene().getWindow(), "Dashboard");
-    }
 
     @FXML
     public void onEdit(ActionEvent event) {
-        showError("Edit functionality not implemented yet.");
+        JournalEntry sel = journalListView.getSelectionModel().getSelectedItem();
+        if (sel == null) {
+            showError("No entry selected");
+            return;
+        }
+        try {
+            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/com/example/journalapp/view/WriteEntry-view.fxml")));
+            Parent root = loader.load();
+            WriteEntryController controller = loader.getController();
+            controller.setEditingEntry(sel);
+            Stage stage = (Stage) editButton.getScene().getWindow();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+            stage.setScene(scene);
+            stage.setTitle("Edit Entry");
+        } catch (IOException e) {
+            showError("Unable to load editor: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -85,5 +103,10 @@ public class PastEntriesController extends BaseController {
         } catch (SQLException e) {
             showError("Delete failed: " + e.getMessage());
         }
+    }
+
+    @FXML
+    public void onBack(ActionEvent event) {
+        switchScene("Dashboard-view.fxml", (Stage) backButton.getScene().getWindow(), "Dashboard");
     }
 }

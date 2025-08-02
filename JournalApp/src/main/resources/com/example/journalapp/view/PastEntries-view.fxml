@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.PastEntriesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.PastEntriesController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
             <children>
@@ -41,8 +41,8 @@
                 <TextArea fx:id="entryContentArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" VBox.vgrow="ALWAYS" />
                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                     <children>
-                        <Button fx:id="editButton" mnemonicParsing="false" styleClass="primary-button" text="Edit" />
-                        <Button fx:id="deleteButton" mnemonicParsing="false" styleClass="logout-button" text="Delete" />
+                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEdit" styleClass="primary-button" text="Edit" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDelete" styleClass="logout-button" text="Delete" />
                     </children>
                 </HBox>
             </children>

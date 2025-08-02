@@ -19,7 +19,7 @@ public class SQLiteUserDAO implements UserDAO {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPasswordHash());
             ps.executeUpdate();
-            try (ResultSet keys = ps.getGeneratedKeys()) {
+            try (ResultSet keys = ps.getGeneratedKeys   ()) {
                 if (keys.next()) {
                     user.setId(keys.getInt(1));
                 }

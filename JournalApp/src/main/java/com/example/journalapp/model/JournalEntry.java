@@ -32,4 +32,9 @@ public class JournalEntry {
 
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+
+    @Override
+    public String toString() {
+        return title + " (" + createdAt.toLocalDate() + ")";
+    }
 }
