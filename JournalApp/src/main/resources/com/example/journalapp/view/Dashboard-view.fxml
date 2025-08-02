@@ -31,10 +31,10 @@
         </VBox>
     </center>
     <right>
-        <VBox alignment="TOP_CENTER" prefWidth="150.0" spacing="10.0" styleClass="streak-box" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" prefHeight="204.0" prefWidth="213.0" spacing="10.0" styleClass="streak-box" BorderPane.alignment="CENTER">
             <children>
                 <Label text="Journal Streak" />
-                <Label fx:id="streakLabel" styleClass="streak-label" text="🔥 15" />
+                <Label fx:id="streakLabel" minWidth="-Infinity" prefHeight="67.0" prefWidth="162.0" styleClass="streak-label" text="🔥 15" />
                 <Label text="Days" />
             </children>
             <BorderPane.margin>
