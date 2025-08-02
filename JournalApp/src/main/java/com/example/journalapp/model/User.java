@@ -13,10 +13,13 @@ public class User {
         this.passwordHash = passwordHash;
     }
 
+    public User(){
+    }
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
     public String getPasswordHash() { return passwordHash; }
-    void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
 }

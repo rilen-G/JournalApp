@@ -1,11 +1,14 @@
 package com.example.journalapp;
 
+import com.example.journalapp.util.DatabaseManager;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class JournalApplication extends Application {
     @Override
@@ -19,6 +22,14 @@ public class JournalApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        try {
+            DatabaseManager.initializeDatabase();
+        } catch (SQLException e) {
+            System.err.println("Failed to initialize database: " + e.getMessage());
+            e.printStackTrace();
+            Platform.exit();
+            return;
+        }
+        launch(args);
     }
 }
