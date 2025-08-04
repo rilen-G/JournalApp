@@ -1,6 +1,6 @@
 .root {
     -fx-font-family: 'Segoe UI', sans-serif;
-    -fx-background-color: #FAFAFC;
+    -fx-background-color: #F4F6FA;
     -fx-padding: 16;
 }
 
@@ -12,13 +12,13 @@
 .title-label {
     -fx-font-size: 30px;
     -fx-font-weight: 600;
-    -fx-text-fill: #1F2A44;
-    -fx-padding: 8 0;
+    -fx-text-fill: #1E293B;
+    -fx-padding: 12 0 4 0;
 }
 
 .header-label {
     -fx-font-size: 22px;
-    -fx-font-weight: 600;
+    -fx-font-weight: 700;
     -fx-text-fill: #FFFFFF;
 }
 
@@ -26,38 +26,65 @@
     -fx-background-radius: 12px;
     -fx-text-fill: #1F2A44;
     -fx-font-size: 15px;
-    -fx-padding: 10 20;
+    -fx-font-weight: 500;
+    -fx-padding: 10 24;
     -fx-border-width: 0;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
-    -fx-transition: all 0.2s ease;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.08), 4, 0, 0, 1);
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: all 0.2s ease-in-out;
 }
 .button:hover {
-    -fx-scale-x: 1.02;
-    -fx-scale-y: 1.02;
+    -fx-scale-x: 1.025;
+    -fx-scale-y: 1.025;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.12), 6, 0, 0, 2);
 }
+
 .primary-button {
-    -fx-background-color: #5A9BDC;
+    -fx-background-color:
+            linear-gradient(from 0% 0% to 100% 100%, #77bdff, #125cd6),
+            linear-gradient(from 0% 0% to 0% 100%, rgba(255,255,255,0.15), transparent);
     -fx-text-fill: #FFFFFF;
-    -fx-font-weight: bold;
 }
+
 .primary-button:hover {
-    -fx-background-color: #4A8ACB;
+    -fx-background-color: linear-gradient(to bottom right, #4A8ACB, #2563EB);
 }
+
+.gray-button {
+    -fx-background-color:
+            linear-gradient(from 0% 0% to 100% 100%, #E5E7EB, #abc5cd),
+            linear-gradient(from 0% 0% to 0% 100%, rgba(255,255,255,0.2), transparent);
+    -fx-text-fill: #1F2A44;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-cursor: hand;
+}
+.gray-button:hover {
+    -fx-background-color:
+            linear-gradient(from 0% 0% to 100% 100%, #D1D5DB, #9CA3AF),
+            linear-gradient(from 0% 0% to 0% 100%, rgba(255,255,255,0.2), transparent);
+}
+
 .logout-button {
-    -fx-background-color: #EC5252;
+    -fx-background-color: linear-gradient(to bottom right, #F87171, #EF4444);
     -fx-text-fill: #FFFFFF;
     -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
 }
 .logout-button:hover {
-    -fx-background-color: #D24444;
+    -fx-background-color: linear-gradient(to bottom right, #DC2626, #B91C1C);
 }
+
 .hyperlink {
-    -fx-text-fill: #5A9BDC;
+    -fx-text-fill: #3B82F6;
     -fx-font-size: 14px;
 }
 .hyperlink:hover {
     -fx-underline: true;
+    -fx-text-fill: #2563EB;
 }
 
 .text-field, .password-field, .text-area {
@@ -67,18 +94,19 @@
     -fx-background-radius: 8px;
     -fx-padding: 10;
     -fx-font-size: 14px;
-    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.05), 2, 0, 0, 1);
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.03), 1, 0, 0, 1);
 }
 .text-field:focused, .password-field:focused, .text-area:focused {
-    -fx-border-color: #5A9BDC;
+    -fx-border-color: #3B82F6;
     -fx-border-width: 2px;
 }
 
 .header-box {
-    -fx-background-color: #1F2A44;
-    -fx-padding: 12 24;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 2);
+    -fx-background-color: #1E293B;
+    -fx-padding: 14 28;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2);
 }
+
 .streak-box {
     -fx-background-color: #FFFFFF;
     -fx-padding: 24;
@@ -86,22 +114,22 @@
     -fx-background-radius: 12px;
     -fx-border-color: #E5E7EB;
     -fx-border-width: 1px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 4, 0, 0, 2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 4, 0, 0, 2);
 }
 .streak-label {
     -fx-font-size: 56px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #F5A623;
+    -fx-font-weight: 700;
+    -fx-text-fill: #F59E0B;
 }
 
 .section {
-    -fx-spacing: 16;
+    -fx-spacing: 20;
 }
 .centered {
     -fx-alignment: CENTER;
 }
 .left-pane {
     -fx-pref-width: 280;
-    -fx-spacing: 12;
+    -fx-spacing: 16;
     -fx-padding: 24;
 }
