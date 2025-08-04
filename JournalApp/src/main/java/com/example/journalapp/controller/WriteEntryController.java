@@ -41,7 +41,6 @@ public class WriteEntryController extends BaseController {
         headerLabel.setText("Edit Entry");
     }
 
-    // Called when user clicks "Save Entry"
     @FXML
     public void onDashboard(ActionEvent event) {
         String title   = titleField.getText().trim();
@@ -69,7 +68,6 @@ public class WriteEntryController extends BaseController {
         }
     }
 
-    // Called when user clicks "← Back"
     @FXML
     public void onCancel(ActionEvent event) {
         if (editingEntry != null) {

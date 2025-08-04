@@ -38,7 +38,6 @@ public class PasswordUtils {
         return computed.equalsIgnoreCase(storedHash);
     }
 
-    // Helper to convert a byte array to a hex string
     private static String bytesToHex(byte[] bytes) {
         StringBuilder sb = new StringBuilder(bytes.length * 2);
         for (byte b : bytes) {

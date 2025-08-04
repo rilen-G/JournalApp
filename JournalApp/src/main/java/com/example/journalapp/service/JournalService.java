@@ -44,9 +44,6 @@ public class JournalService {
         return entryDAO.searchEntries(user.getId(), keyword);
     }
 
-    /**
-     * Counts consecutive-day journaling streak up to today.
-     */
     public int calculateStreak(User user) throws SQLException {
 
         List<JournalEntry> entries = entryDAO.findEntriesByUser(user.getId());
