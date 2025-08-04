@@ -14,7 +14,7 @@
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="backButton" mnemonicParsing="false" onAction="#onCancel" text="← Back" />
-                <Label styleClass="header-label" text="Create a New Entry" />
+                <Label fx:id="headerLabel" styleClass="header-label" text="Create a New Entry" />
             </children>
             <padding>
                 <Insets left="20.0" right="20.0" />

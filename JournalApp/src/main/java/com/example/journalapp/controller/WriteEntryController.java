@@ -7,6 +7,7 @@ import com.example.journalapp.util.Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,13 +15,14 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class WriteEntryController extends BaseController {
+    @FXML private Label headerLabel;
     @FXML private TextField titleField;
     @FXML private TextArea contentArea;
     @FXML private Button saveButton;
     @FXML private Button backButton;
 
     private JournalService journalService;
-    private JournalEntry editingEntry;
+    private JournalEntry editingEntry = null;
 
     @FXML
     public void initialize() {
@@ -36,6 +38,7 @@ public class WriteEntryController extends BaseController {
         titleField.setText(entry.getTitle());
         contentArea.setText(entry.getContent());
         saveButton.setText("Update Entry");
+        headerLabel.setText("Edit Entry");
     }
 
     // Called when user clicks "Save Entry"

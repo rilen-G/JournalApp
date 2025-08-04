@@ -79,7 +79,7 @@ public class PastEntriesController extends BaseController {
             controller.setEditingEntry(sel);
             Stage stage = (Stage) editButton.getScene().getWindow();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/styles/styles.css").toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/journalapp/styles/styles.css")).toExternalForm());
             stage.setScene(scene);
             stage.setTitle("Edit Entry");
         } catch (IOException e) {
