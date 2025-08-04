@@ -4,6 +4,7 @@ import com.example.journalapp.model.JournalEntry;
 import com.example.journalapp.util.DatabaseManager;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -122,5 +123,24 @@ public class SQLiteJournalEntryDAO implements JournalEntryDAO {
                 return null;
             }
         }
+    }
+
+    @Override
+    public List<LocalDate> getEntryDates(int userId) throws SQLException {
+        List<LocalDate> dates = new ArrayList<>();
+        String query = "SELECT DATE(created_at) as entry_date FROM entries WHERE user_id = ?";
+
+        try (Connection conn = DatabaseManager.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                dates.add(LocalDate.parse(rs.getString("entry_date")));
+            }
+        }
+
+        return dates;
     }
 }
