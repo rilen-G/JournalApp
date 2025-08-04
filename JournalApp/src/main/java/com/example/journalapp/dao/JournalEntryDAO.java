@@ -2,6 +2,7 @@ package com.example.journalapp.dao;
 
 import com.example.journalapp.model.JournalEntry;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -37,4 +38,9 @@ public interface JournalEntryDAO {
      * Retrieve a single entry by its ID.
      */
     JournalEntry findById(int entryId) throws SQLException;
+
+    /**
+     * Get a list of LocalDate objects representing the dates of entries made by a user.
+     */
+    List<LocalDate> getEntryDates(int userId) throws SQLException;
 }
