@@ -64,7 +64,7 @@ public class SQLiteJournalEntryDAO implements JournalEntryDAO {
                 while (rs.next()) {
                     JournalEntry e = new JournalEntry();
                     e.setId(rs.getInt("id"));
-                    e.setId(rs.getInt("user_id"));
+                    e.setUserId(rs.getInt("user_id"));
                     e.setTitle(rs.getString("title"));
                     e.setContent(rs.getString("content"));
                     e.setCreatedAt(LocalDateTime.parse(rs.getString("created_at")));

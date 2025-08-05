@@ -17,12 +17,10 @@
            prefWidth="800.0" prefHeight="600.0"
            minWidth="800.0" minHeight="600.0">
 
-   <!-- ensure CSS is picked up -->
    <stylesheets>
       <URL value="@../styles/styles.css"/>
    </stylesheets>
 
-   <!-- the card -->
    <VBox spacing="30.0"
          styleClass="card"
          maxWidth="360.0"
