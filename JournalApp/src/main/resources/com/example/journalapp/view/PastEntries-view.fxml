@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,47 +7,89 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.journalapp.controller.PastEntriesController">
-    <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBack" text="← Back" />
-                <Label styleClass="header-label" text="Past Entries" />
-            </children>
-            <padding>
-                <Insets left="20.0" right="20.0" />
-            </padding>
-        </HBox>
-    </top>
-    <left>
-        <VBox prefWidth="250.0" spacing="10.0" BorderPane.alignment="CENTER">
-            <children>
-                <TextField fx:id="searchField" promptText="Search by keyword..." />
-                <ListView fx:id="journalListView" VBox.vgrow="ALWAYS" />
-            </children>
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
-            </padding>
-        </VBox>
-    </left>
-    <center>
-        <VBox spacing="15.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label fx:id="entryTitleLabel" styleClass="title-label" text="Entry Title Will Appear Here" />
-                <Label fx:id="entryDateLabel" text="Date: YYYY-MM-DD" />
-                <TextArea fx:id="entryContentArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" VBox.vgrow="ALWAYS" />
-                <HBox alignment="CENTER_LEFT" spacing="10.0">
-                    <children>
-                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEdit" styleClass="primary-button" text="Edit" />
-                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDelete" styleClass="logout-button" text="Delete" />
-                    </children>
-                </HBox>
-            </children>
-            <padding>
-                <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
-            </padding>
-        </VBox>
-    </center>
-</BorderPane>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.journalapp.controller.PastEntriesController"
+           styleClass="root"
+           stylesheets="@../styles/styles.css">
+
+    <stylesheets>
+        <URL value="@../styles/styles.css"/>
+    </stylesheets>
+
+    <BorderPane styleClass="card"
+                prefWidth="800.0"
+                prefHeight="600.0">
+
+        <top>
+            <HBox alignment="CENTER_LEFT"
+                  prefHeight="60.0"
+                  spacing="10.0"
+                  styleClass="header-box"
+                  BorderPane.alignment="CENTER">
+                <children>
+                    <Button fx:id="backButton"
+                            mnemonicParsing="false"
+                            onAction="#onBack"
+                            text="← Back"/>
+                    <Label styleClass="header-label" text="Past Entries"/>
+                </children>
+                <padding>
+                    <Insets left="20" right="20"/>
+                </padding>
+            </HBox>
+        </top>
+
+        <left>
+            <VBox styleClass="left-pane card"
+                  prefWidth="250.0"
+                  spacing="10.0"
+                  BorderPane.alignment="CENTER">
+                <children>
+                    <TextField fx:id="searchField" promptText="Search by keyword..."/>
+                    <ListView fx:id="journalListView" VBox.vgrow="ALWAYS"/>
+                </children>
+                <padding>
+                    <Insets top="20" left="20" right="10" bottom="20"/>
+                </padding>
+            </VBox>
+        </left>
+
+        <center>
+            <VBox spacing="15.0" BorderPane.alignment="CENTER">
+                <children>
+                    <Label fx:id="entryTitleLabel"
+                           styleClass="title-label"
+                           text="Entry Title Will Appear Here"/>
+                    <Label fx:id="entryDateLabel" text="Date: YYYY-MM-DD"/>
+                    <TextArea fx:id="entryContentArea"
+                              editable="false"
+                              wrapText="true"
+                              VBox.vgrow="ALWAYS"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Button fx:id="editButton"
+                                    mnemonicParsing="false"
+                                    onAction="#onEdit"
+                                    styleClass="primary-button"
+                                    text="Edit"/>
+                            <Button fx:id="deleteButton"
+                                    mnemonicParsing="false"
+                                    onAction="#onDelete"
+                                    styleClass="logout-button"
+                                    text="Delete"/>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </center>
+
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+    </BorderPane>
+</StackPane>
