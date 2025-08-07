@@ -44,7 +44,7 @@ public class WriteEntryController extends BaseController {
     // Called when user clicks "Save Entry"
     @FXML
     public void onDashboard(ActionEvent event) {
-        String title = titleField.getText().trim();
+        String title   = titleField.getText().trim();
         String content = contentArea.getText().trim();
         if (title.isEmpty()) {
             showError("Title cannot be empty");
@@ -52,8 +52,18 @@ public class WriteEntryController extends BaseController {
         }
         try {
             User user = Session.getCurrentUser();
-            journalService.addEntry(title, content, user);
-            switchScene("Dashboard-view.fxml", (Stage) saveButton.getScene().getWindow(), "Dashboard");
+
+            if (editingEntry != null) {
+
+                editingEntry.setTitle(title);
+                editingEntry.setContent(content);
+                journalService.updateEntry(editingEntry);
+
+                switchScene("PastEntries-view.fxml", (Stage) saveButton.getScene().getWindow(), "Past Entries");
+            } else {
+                journalService.addEntry(title, content, user);
+                switchScene("Dashboard-view.fxml", (Stage) saveButton.getScene().getWindow(), "Dashboard");
+            }
         } catch (SQLException e) {
             showError("Error saving entry: " + e.getMessage());
         }
